@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADYKI WHEEL - Manufaktura Kół Karbonowych</title>
+    <style>
+        /* Ogólne style */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Nagłówek i menu */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1% 5%;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 4vh;
+            margin-right: 2%;
+        }
+
+        .brand-name {
+            font-size: 2vh;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            font-size: 2.5vh;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 2%;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 2vh;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 6%;
+                left: 0;
+                right: 0;
+                padding: 2%;
+            }
+
+            nav ul li {
+                margin: 2% 0;
+                text-align: center;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
+
+        /* Sekcja Ambasadorzy */
+        #ambassadors, #patent {
+            padding: 5% 10%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .ambassador, .patent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2%;
+            margin-bottom: 5%;
+            border: 2px solid #ddd;
+            padding: 2%;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 2% 5% rgba(0, 0, 0, 0.1);
+        }
+
+        .ambassador img, .patent img {
+            border-radius: 50%;
+            max-width: 20%;
+            min-width: 100px;
+            height: auto;
+        }
+
+        .ambassador-content, .patent-content {
+            max-width: 75%;
+            text-align: left;
+        }
+
+        .ambassador h3, .patent h3 {
+            margin: 0 0 1%;
+            font-size: 2vh;
+        }
+
+        .ambassador p, .patent p {
+            font-size: 1.8vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stały górny margines -->
+    <header>
+        <div class="logo-container">
+            <img src="logo1.png" alt="Logotyp ADYKI WHEEL" class="logo">
+            <span class="brand-name">ADYKI WHEEL</span>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#offer">Oferta</a></li>
+                <li><a href="#about">O Nas</a></li>
+                <li><a href="#ambassadors">Ambasadorzy</a></li>
+                <li><a href="#patent">Patent</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Tło strony -->
+    <div class="background-image" id="home">
+        <div class="center-content">
+            <img src="logo1.png" alt="Logotyp ADYKI WHEEL" class="center-logo">
+            <img src="warsztat1.jpg" alt="Zdjęcie warsztatu" class="center-workshop-image">
+        </div>
+    </div>
+
+    <!-- Sekcja Oferta (niezmieniona) -->
+    <section id="offer">
+        <h2>Oferta Kół Karbonowych</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="kolo1.jpg" alt="ADYKI Wersja Podstawowa">
+                <h3>ADYKI WERSJA PODSTAWOWA</h3>
+                <ul>
+                    <li>Waga: 1500g</li>
+                    <li>Materiał: Karbon</li>
+                    <li>Linia Produktu: Podstawowa</li>
+                    <li>Cena: 2500 PLN</li>
+                    <li>Rozmiar Osi: 12x100 12x142</li>
+                    <li>Dostępne Wysokości: 30mm, 40mm, 50mm</li>
+                    <li>Dostępność: Na zamówienie</li>
+                </ul>
+            </div>
+            <!-- Kolejne kafelki -->
+        </div>
+    </section>
+
+    <!-- Sekcja O Nas (niezmieniona) -->
+    <section id="about">
+        <h2>O Nas</h2>
+        <p>Manufaktura kół karbonowych to miejsce, gdzie pasja do innowacji łączy się z precyzją rzemiosła...</p>
+    </section>
+
+    <!-- Nowa sekcja Ambasadorzy -->
+    <section id="ambassadors">
+        <h2>Ambasadorzy</h2>
+        <div class="ambassador">
+            <img src="ambassador1.jpg" alt="Zdjęcie Ambasadora">
+            <div class="ambassador-content">
+                <h3>Jan Kowalski</h3>
+                <p>Zespół: Team Carbon Riders</p>
+                <p>Jan testuje nasze produkty od 2019 roku. W swoich osiągnięciach ma wiele zwycięstw w wyścigach MTB.</p>
+            </div>
+        </div>
+        <!-- Kolejni ambasadorzy -->
+    </section>
+
+    <!-- Nowa sekcja Patent -->
+    <section id="patent">
+        <h2>Patent</h2>
+        <div class="patent">
+            <img src="patent.jpg" alt="Zdjęcie Patentu">
+            <div class="patent-content">
+                <h3>ADYKI Fiber Core Technology</h3>
+                <p>Unikalna technologia laminowania włókien karbonowych, zapewniająca wyjątkową lekkość i wytrzymałość kół.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Kontakt -->
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>ADYKI WHEEL | adykiwheel@wp.pl | 123 123 123 | Instagram: @adykiwheel</p>
+    </section>
+
+    <!-- Skrypt do rozwijania menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
